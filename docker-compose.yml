@@ -1,0 +1,16 @@
+services:
+  todo-next:
+    image: postgres
+    restart: always
+    container_name: todo-next
+    ports:
+      - "2024:5432"
+    environment:
+       POSTGRES_PASSWORD: example
+       PGDATA: /data/postgres
+    volumes:
+    - postgres:/data/postgres
+
+
+volumes:
+  postgres:
